@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5D242C6E3E80933CA27E6207 /* Pods_CustomLoginDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95139E1735F2C8F98A3A4DD5 /* Pods_CustomLoginDemo.framework */; };
 		614CBC9424B6DCA0005210A0 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614CBC9324B6DCA0005210A0 /* CalendarViewController.swift */; };
+		614CBCA824BC0235005210A0 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614CBCA724BC0234005210A0 /* FriendsViewController.swift */; };
 		6150688524B3191E00CBB5D6 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6150688424B3191E00CBB5D6 /* Utilities.swift */; };
 		6150688824B3213100CBB5D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6150688724B3213100CBB5D6 /* GoogleService-Info.plist */; };
 		615068AA24B5CFFD00CBB5D6 /* BottleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615068A924B5CFFD00CBB5D6 /* BottleViewController.swift */; };
@@ -29,6 +30,7 @@
 		2154C503141A3223F32777B1 /* Pods-CustomLoginDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomLoginDemo.debug.xcconfig"; path = "Target Support Files/Pods-CustomLoginDemo/Pods-CustomLoginDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		3CCC588C6C7D453BD14F48E5 /* Pods-CustomLoginDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomLoginDemo.release.xcconfig"; path = "Target Support Files/Pods-CustomLoginDemo/Pods-CustomLoginDemo.release.xcconfig"; sourceTree = "<group>"; };
 		614CBC9324B6DCA0005210A0 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		614CBCA724BC0234005210A0 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		6150688424B3191E00CBB5D6 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		6150688724B3213100CBB5D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		615068A924B5CFFD00CBB5D6 /* BottleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				615068A924B5CFFD00CBB5D6 /* BottleViewController.swift */,
 				6175948524B5B958000AC907 /* AnalysisViewController.swift */,
 				614CBC9324B6DCA0005210A0 /* CalendarViewController.swift */,
+				614CBCA724BC0234005210A0 /* FriendsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				6175946B24B2F311000AC907 /* ViewController.swift in Sources */,
 				6175946724B2F311000AC907 /* AppDelegate.swift in Sources */,
 				614CBC9424B6DCA0005210A0 /* CalendarViewController.swift in Sources */,
+				614CBCA824BC0235005210A0 /* FriendsViewController.swift in Sources */,
 				6150688524B3191E00CBB5D6 /* Utilities.swift in Sources */,
 				6175947B24B2F3FE000AC907 /* SignUpViewController.swift in Sources */,
 				6175948424B38097000AC907 /* LoginViewController.swift in Sources */,

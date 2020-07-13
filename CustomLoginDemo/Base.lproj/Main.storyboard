@@ -200,13 +200,26 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ps9-MZ-g1Q">
+                                <rect key="frame" x="20" y="188" width="374" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Vet-Je-xCy"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTapButton" destination="XBi-3v-esu" eventType="touchUpInside" id="ivh-Qi-hku"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Ps9-MZ-g1Q" firstAttribute="top" secondItem="0Ym-gh-mju" secondAttribute="top" constant="100" id="2yy-FC-9Ae"/>
+                            <constraint firstItem="Ps9-MZ-g1Q" firstAttribute="leading" secondItem="0Ym-gh-mju" secondAttribute="leading" constant="20" id="JDR-5O-lGx"/>
                             <constraint firstItem="npg-Sh-riY" firstAttribute="leading" secondItem="0Ym-gh-mju" secondAttribute="leading" constant="40" id="NGt-w9-b0z"/>
                             <constraint firstItem="0Ym-gh-mju" firstAttribute="bottom" secondItem="npg-Sh-riY" secondAttribute="bottom" constant="40" id="Oi2-ga-QNG"/>
                             <constraint firstItem="PJa-N0-DmS" firstAttribute="centerX" secondItem="blB-tJ-X8V" secondAttribute="centerX" id="PuY-1u-4nZ"/>
                             <constraint firstItem="PJa-N0-DmS" firstAttribute="centerY" secondItem="blB-tJ-X8V" secondAttribute="centerY" id="XNc-Nx-laz"/>
+                            <constraint firstItem="0Ym-gh-mju" firstAttribute="trailing" secondItem="Ps9-MZ-g1Q" secondAttribute="trailing" constant="20" id="tmS-pZ-pW1"/>
                             <constraint firstItem="0Ym-gh-mju" firstAttribute="trailing" secondItem="npg-Sh-riY" secondAttribute="trailing" constant="40" id="weh-S0-xyV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Ym-gh-mju"/>
@@ -214,6 +227,7 @@
                     <navigationItem key="navigationItem" id="3oG-WB-l9w"/>
                     <connections>
                         <outlet property="logOutButton" destination="fhI-zP-hvN" id="sie-P8-Ilq"/>
+                        <outlet property="myButton" destination="Ps9-MZ-g1Q" id="jmM-1c-Sdq"/>
                         <outlet property="nicknameText" destination="PJa-N0-DmS" id="wwt-CT-dL8"/>
                     </connections>
                 </viewController>
@@ -423,17 +437,55 @@
             </objects>
             <point key="canvasLocation" x="3456.521739130435" y="132.58928571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--Friends View Controller-->
         <scene sceneID="lVv-tw-aoA">
             <objects>
-                <viewController id="i2S-9J-1cZ" sceneMemberID="viewController">
+                <viewController id="i2S-9J-1cZ" customClass="FriendsViewController" customModule="CustomLoginDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bZ3-mE-6tU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Uvz-c6-MJ6">
+                                <rect key="frame" x="40" y="638.5" width="334" height="134.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Friend ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oGM-Q5-rpA">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFb-3G-KMf">
+                                        <rect key="frame" x="0.0" y="54" width="334" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="AX1-q0-ctg"/>
+                                        </constraints>
+                                        <state key="normal" title="Add Friends"/>
+                                        <connections>
+                                            <action selector="addFriendsTapped:" destination="i2S-9J-1cZ" eventType="touchUpInside" id="bbZ-Xo-rIP"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUZ-dn-Bxv">
+                                        <rect key="frame" x="0.0" y="114" width="334" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8UH-oc-sJW" firstAttribute="bottom" secondItem="Uvz-c6-MJ6" secondAttribute="bottom" constant="40" id="3lq-yM-a4I"/>
+                            <constraint firstItem="8UH-oc-sJW" firstAttribute="trailing" secondItem="Uvz-c6-MJ6" secondAttribute="trailing" constant="40" id="Ovp-8f-iVf"/>
+                            <constraint firstItem="Uvz-c6-MJ6" firstAttribute="leading" secondItem="8UH-oc-sJW" secondAttribute="leading" constant="40" id="Xp0-WX-OhB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8UH-oc-sJW"/>
                     </view>
                     <navigationItem key="navigationItem" id="1M5-Fp-RiZ"/>
+                    <connections>
+                        <outlet property="addFriendsButton" destination="hFb-3G-KMf" id="M9y-fd-gsS"/>
+                        <outlet property="errorLabel" destination="xUZ-dn-Bxv" id="Lrj-oq-nZC"/>
+                        <outlet property="friendIDTextFeild" destination="oGM-Q5-rpA" id="5Xz-QA-GiM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jA8-M0-We5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
