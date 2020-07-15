@@ -38,7 +38,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate, FSCalendarDat
 //        formatter.dateFormat = "EEEE MM-dd-YYYY at h:mm a"
 //        let string = formatter.string(from: date)
 //        print("\(string)")
-        //點選跳出當天紀錄
+        //點選跳出當天紀錄，目前不管有沒有紀錄事件都會跳視窗
         let dateString = self.dateFormatter2.string(from: date)
             eventAlert.showeventAlert(with: dateString,
             message: "  ",

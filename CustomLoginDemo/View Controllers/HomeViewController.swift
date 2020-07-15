@@ -10,13 +10,13 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
+
 class HomeViewController: UIViewController {
     //alert
     @IBOutlet var myButton: UIButton!
     let customAlert = MyAlert()
     var event_count = 6
-    var alert_event_count = " "
-    
+
     @IBOutlet weak var nicknameText: UILabel!
     
     @IBOutlet weak var logOutButton: UIButton!
@@ -50,15 +50,14 @@ class HomeViewController: UIViewController {
         myButton.backgroundColor = .link
         myButton.setTitleColor(.white, for: .normal)
         myButton.setTitle("新增事件", for: .normal)
+        
     }
     //alert自動跳出
     override func viewDidAppear(_ animated: Bool) {
-        alert_event_count = "今日事件量" + String(event_count) + "/6"
-        customAlert.showAlert(with: "請問要新增事件嗎？",
-        message: alert_event_count,
+        customAlert.showAlert_Q(with: "請問要新增事件嗎？",
+        message: String(event_count),
         on: self)
         event_count-=1
-        print(event_count)
     }
     @IBAction func logOutTapped(_ sender: Any) {
         
@@ -76,9 +75,10 @@ class HomeViewController: UIViewController {
     }
     //alert按按鈕跳出
     @IBAction func didTapButton(){
-        customAlert.showAlert(with: "請問要新增事件嗎？",
-        message: alert_event_count,
+        customAlert.showAlert_Q(with: "請問要新增事件嗎？",
+        message: String(event_count),
         on: self)
+        event_count-=1
     }
     @objc func dismissAlert(){
         customAlert.dismissAlert()
@@ -108,7 +108,7 @@ class MyAlert{
     }()
     private var mytargetView: UIView?
     //新增事件視窗
-    func showAlert(with title: String,
+    func showAlert_Q(with title: String,
                    message: String,
                    on ViewController: UIViewController){
         guard let targetView = ViewController.view else{
@@ -132,15 +132,15 @@ class MyAlert{
         titleLabel.text = title
         titleLabel.textAlignment = .center
         alertView.addSubview(titleLabel)
-        //資訊
+        //資訊 (還沒寫到數量用完時)
         let messageLabel = UILabel(frame: CGRect(x: 0,
-                                               y: 80,
-                                               width: alertView.frame.size.width,
-                                               height: 170))
-        messageLabel.numberOfLines = 0
-        messageLabel.text = message
-        messageLabel.textAlignment = .center
-        alertView.addSubview(messageLabel)
+                                                 y: 80,
+                                                 width: alertView.frame.size.width,
+                                                 height: 170))
+            messageLabel.numberOfLines = 0
+            messageLabel.text = "今日事件量"+message+"/6"
+            messageLabel.textAlignment = .center
+            alertView.addSubview(messageLabel)
         //關閉按鈕
         let button = UIButton(frame: CGRect(x: alertView.frame.size.width-(alertView.frame.size.width/2)-30,
                                             y: 0,
@@ -162,7 +162,6 @@ class MyAlert{
 //        add_event.addTarget(self, action: #selector(dismissAlert),
 //                         for: .touchUpInside)
         alertView.addSubview(add_event)
-        
         UIView.animate(withDuration: 0.25,
                        animations: {
                         self.backgroundView.alpha = Constants.backgroundAlphaTo
@@ -246,6 +245,12 @@ class MyAlert{
                     self.backgroundView.alpha = 0
                 }, completion: { done in
                     if done{
+                        //完整清除一切subview
+                        //https://blog.csdn.net/zhuiyi316/article/details/8308858
+                        //https://www.itread01.com/articles/1484274841.html
+                        for child : UIView in self.alertView.subviews as [UIView] {
+                            child.removeFromSuperview()
+                        }
                         self.alertView.removeFromSuperview()
                         self.backgroundView.removeFromSuperview()
                     }
